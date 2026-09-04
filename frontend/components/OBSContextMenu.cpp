@@ -5,8 +5,6 @@
 #include <QT>
 #include <QWindow>
 
-#include <string>
-
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include "Windows.h"
@@ -30,7 +28,6 @@ void OBSContextMenu::showEvent(QShowEvent *event)
 		case WDA_EXCLUDEFROMCAPTURE:
 			if (SetWindowDisplayAffinity(contextWindowHandle, WDA_EXCLUDEFROMCAPTURE) == FALSE) {
 				blog(LOG_INFO, "Tried to hide from capture; could not set display affinity for Context Menu.");
-				blog(LOG_INFO, std::to_string(GetLastError()).c_str());
 			}
 			break;
 		case WDA_NONE:
