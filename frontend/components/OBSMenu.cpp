@@ -58,5 +58,5 @@ void OBSMenu::showEvent(QShowEvent *event)
 }
 
 void OBSMenu::popupMenu() {
-	popup(mapFrom(parent, QCursor::pos()));
+	popup(QCursor::pos());
 }
